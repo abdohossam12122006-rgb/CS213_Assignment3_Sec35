@@ -49,7 +49,7 @@ public:
      * @brief Construct a board with given dimensions.
      */
     Board(int rows, int columns)
-        : rows(rows), columns(columns), board(rows, vector<T>(columns)) {}
+            : rows(rows), columns(columns), board(rows, vector<T>(columns)) {}
 
     /**
      * @brief Virtual destructor. Frees allocated board memory.
@@ -134,7 +134,7 @@ public:
      * @brief Construct a player with name, symbol, and type.
      */
     Player(string n, T s, PlayerType t)
-        : name(n), symbol(s), type(t), boardPtr(nullptr) {}
+            : name(n), symbol(s), type(t), boardPtr(nullptr) {}
 
     virtual ~Player() {}
 
@@ -192,7 +192,7 @@ public:
      * @brief Construct the UI and display a welcome message.
      */
     UI(string message, int cell_display_width)
-        : cell_width(cell_display_width) {
+            : cell_width(cell_display_width) {
         cout << message << endl;
     }
 
@@ -257,7 +257,7 @@ public:
      * @brief Construct a game manager with board, players, and UI.
      */
     GameManager(Board<T>* b, Player<T>* p[2], UI<T>* u)
-        : boardPtr(b), ui(u) {
+            : boardPtr(b), ui(u) {
         players[0] = p[0];
         players[1] = p[1];
         players[0]->set_board_ptr(b);
