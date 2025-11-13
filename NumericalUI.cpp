@@ -22,7 +22,6 @@ Move<char>* NumericalUI::get_move(Player<char>* player) {
         }
         std::cout << "}\n";
         std::cout << "Please choose a number: ";
-
         std::cin >> chosen_num;
 
         if (num_player->is_number_available(chosen_num)) {
@@ -61,6 +60,5 @@ Move<char>* NumericalUI::get_move(Player<char>* player) {
 }
 
 Player<char>* NumericalUI::create_player(string& name, char symbol, PlayerType type) {
-    // We must implement this to make the class non-abstract
     return new Player<char>(name, symbol, type);
 }
