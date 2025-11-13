@@ -1,0 +1,3 @@
+C:/Users/AdminOS/Downloads/BoardGameFramework-20251111T105336Z-1-001/BoardGameFramework/CS213_Assignment3_Sec35/out/build/x64-Debug/CMakeFiles/XO_Demo.dir
+C:/Users/AdminOS/Downloads/BoardGameFramework-20251111T105336Z-1-001/BoardGameFramework/CS213_Assignment3_Sec35/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/AdminOS/Downloads/BoardGameFramework-20251111T105336Z-1-001/BoardGameFramework/CS213_Assignment3_Sec35/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,27 @@
+﻿  NumericalBoard.cpp
+  NumericalPlayer.cpp
+  NumericalUI.cpp
+  XO_Classes.cpp
+  XO_Demo.cpp
+  Generating Code...
+C:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\BoardGame_Classes.h(225,18): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '../XO_Demo.cpp')
+      C:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\BoardGame_Classes.h(225,18):
+      the template instantiation context (the oldest one first) is
+          C:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\NumericalUI.h(5,28):
+          see reference to class template instantiation 'UI<char>' being compiled
+          C:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\BoardGame_Classes.h(222,10):
+          while compiling class template member function 'void UI<char>::display_board_matrix(const std::vector<std::vector<T,std::allocator<char>>,std::allocator<std::vector<T,std::allocator<char>>>> &) const'
+          with
+          [
+              T=char
+          ]
+              C:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\BoardGame_Classes.h(271,33):
+              see the first reference to 'UI<char>::display_board_matrix' in 'GameManager<char>::run'
+              C:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\XO_Demo.cpp(34,13):
+              see the first reference to 'GameManager<char>::run' in 'main'
+  
+C:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\BoardGame_Classes.h(226,18): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '../XO_Demo.cpp')
+  
+  project 3 oop.vcxproj -> C:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\project 3 oop\x64\Debug\project 3 oop.exe
