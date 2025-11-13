@@ -4,33 +4,37 @@
 #include <limits>
 #include "BoardGame_Classes.h"
 #include "XO_Classes.h"
+#include "NumericalPlayer.h"
+#include "NumericalBoard.h"
+#include "NumericalUI.h"
 using namespace std;
+
 void display_menu() {
     cout << "========================================" << endl;
-    cout << "   Welcome to the CS213 Game Center!  " << endl;
+    cout << "    Welcome to the CS213 Game Center!   " << endl;
     cout << "========================================" << endl;
     cout << "  Individual Games (Set 1):" << endl;
-    cout << "    1. SUS" << endl;
-    cout << "    2. Four-in-a-row" << endl;
+    cout << "     1. SUS" << endl;
+    cout << "     2. Four-in-a-row" << endl;
     cout << "  Individual Games (Set 2):" << endl;
-    cout << "    3. 5x5 Tic Tac Toe" << endl;
-    cout << "    4. Word Tic-tac-toe" << endl;
+    cout << "     3. 5x5 Tic Tac Toe" << endl;
+    cout << "     4. Word Tic-tac-toe" << endl;
     cout << "  Individual Games (Set 3):" << endl;
-    cout << "    5. Misere Tic Tac Toe" << endl;
-    cout << "    6. Diamond Tic-Tac-Toe" << endl;
+    cout << "     5. Misere Tic Tac Toe" << endl;
+    cout << "     6. Diamond Tic-Tac-Toe" << endl;
     cout << "  Individual Games (Set 4):" << endl;
-    cout << "    7. 4x4 Tic-Tac-Toe" << endl;
-    cout << "    8. Pyramid Tic-Tac-Toe" << endl;
+    cout << "     7. 4x4 Tic-Tac-Toe" << endl;
+    cout << "     8. Pyramid Tic-Tac-Toe" << endl;
     cout << "--- Group Games ---" << endl;
-    cout << "    9. Numerical Tic-Tac-Toe" << endl;
-    cout << "    10. Obstacles Tic-Tac-Toe" << endl;
-    cout << "    11. Infinity Tic-Tac-Toe" << endl;
+    cout << "     9. Numerical Tic-Tac-Toe" << endl;
+    cout << "     10. Obstacles Tic-Tac-Toe" << endl;
+    cout << "     11. Infinity Tic-Tac-Toe" << endl;
     cout << "--- Bonus Group Games ---" << endl;
-    cout << "    12. Ultimate Tic Tac Toe" << endl;
-    cout << "    13. Memory Tic-Tac-Toe" << endl;
+    cout << "     12. Ultimate Tic Tac Toe" << endl;
+    cout << "     13. Memory Tic-Tac-Toe" << endl;
     cout << "----------------------------------------" << endl;
-    cout << "    14. (Example) X-O Game" << endl;
-    cout << "    0. Exit" << endl;
+    cout << "     14. (Example) X-O Game" << endl;
+    cout << "     0. Exit" << endl;
     cout << "========================================" << endl;
     cout << "Enter your choice (0-14): ";
 }
@@ -51,61 +55,89 @@ void pause_screen() {
 
 
 void run_game_selection(int choice) {
-    clear_screen(); 
+    clear_screen();
+
+    Board<char>* board = nullptr;
+    UI<char>* ui = nullptr;
+    Player<char>* players[2];
+    GameManager<char>* gameManager = nullptr;
 
     switch (choice) {
-        // --- Individual Games ---
-    case 1: // SUS
+    case 1:
         cout << "Starting Game: SUS..." << endl;
-       
         break;
-    case 2: // Four-in-a-row
+    case 2:
         cout << "Starting Game: Four-in-a-row..." << endl;
-        
         break;
-    case 3: // 5x5 Tic Tac Toe
+    case 3:
         cout << "Starting Game: 5x5 Tic Tac Toe..." << endl;
-       
         break;
-    case 4: // Word Tic-tac-toe
+    case 4:
         cout << "Starting Game: Word Tic-tac-toe..." << endl;
-        
         break;
-    case 5: // Misere Tic Tac Toe
+    case 5:
         cout << "Starting Game: Misere Tic Tac Toe..." << endl;
         break;
-    case 6: // Diamond Tic-Tac-Toe
+    case 6:
         cout << "Starting Game: Diamond Tic-Tac-Toe..." << endl;
         break;
-    case 7: // 4x4 Tic-Tac-Toe
+    case 7:
         cout << "Starting Game: 4x4 Tic-Tac-Toe..." << endl;
         break;
-    case 8: // Pyramid Tic-Tac-Toe
+    case 8:
         cout << "Starting Game: Pyramid Tic-Tac-Toe..." << endl;
         break;
 
-        // --- Group Games ---
-    case 9: // Numerical Tic-Tac-Toe
+    case 9:
         cout << "Starting Game: Numerical Tic-Tac-Toe..." << endl;
+
+        board = new NumericalBoard();
+        ui = new NumericalUI();
+
+        {
+            vector<int> odds = { 1, 3, 5, 7, 9 };
+            vector<int> evens = { 2, 4, 6, 8 };
+            players[0] = new NumericalPlayer('X', "Player 1 (Odd)", odds, PlayerType::HUMAN);
+            players[1] = new NumericalPlayer('O', "Player 2 (Even)", evens, PlayerType::HUMAN);
+        }
+
+        gameManager = new GameManager<char>(board, players, ui);
+        gameManager->run();
+
+        delete board;
+        delete ui;
+        delete players[0];
+        delete players[1];
+        delete gameManager;
         break;
-    case 10: // Obstacles Tic-Tac-Toe
+
+    case 10:
         cout << "Starting Game: Obstacles Tic-Tac-Toe..." << endl;
         break;
-    case 11: // Infinity Tic-Tac-Toe
+    case 11:
         cout << "Starting Game: Infinity Tic-Tac-Toe..." << endl;
         break;
-
-        // --- Bonus Group Games ---
-    case 12: // Ultimate Tic Tac Toe
+    case 12:
         cout << "Starting Game: Ultimate Tic Tac Toe..." << endl;
         break;
-    case 13: // Memory Tic-Tac-Toe
+    case 13:
         cout << "Starting Game: Memory Tic-Tac-Toe..." << endl;
         break;
-
-        // --- Example Game ---
-    case 14: // X-O Game
+    case 14:
         cout << "Starting Game: (Example) X-O Game..." << endl;
+
+        board = new X_O_Board();
+        players[0] = new Player<char>("Player 1", 'X', PlayerType::HUMAN);
+        players[1] = new Player<char>("Player 2", 'O', PlayerType::HUMAN);
+
+        gameManager = new GameManager<char>(board, players, ui);
+        gameManager->run();
+
+        delete board;
+        delete ui;
+        delete players[0];
+        delete players[1];
+        delete gameManager;
         break;
 
     default:
@@ -116,31 +148,33 @@ void run_game_selection(int choice) {
 
 
 int main() {
-    int choice;
+    int choice = -1; 
 
     while (true) {
         clear_screen();
         display_menu();
 
-        
+
         while (!(cin >> choice)) {
             cout << "Invalid input. Please enter a number: ";
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
 
-        
+
         if (choice == 0) {
             clear_screen();
             cout << "Thank you for playing. Goodbye!" << endl;
-            return 0; 
+            return 0;
         }
 
-       
+
         run_game_selection(choice);
-        pause_screen();
+
+        if (choice >= 1 && choice <= 14) {
+            pause_screen();
+        }
     }
 
-    return 0; 
+    return 0;
 }
-
