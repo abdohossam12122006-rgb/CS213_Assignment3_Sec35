@@ -1,8 +1,27 @@
-# vs
-out/
-build/
-x64/
+# Visual Studio
 .vs/
+*.user
+*.suo
+*.pdb
+*.obj
+*.tlog
+*.log
+*.idb
+*.ipch
+*.exe
+*.dll
+*.lib
+*.cache
+*.db
+*.ilk
+*.aps
+*.ncb
+*.opendb
+*.VC.db
+*.VC.opendb
+x64/
+Debug/
+Release/
 
 # CMake
 CMakeFiles/
