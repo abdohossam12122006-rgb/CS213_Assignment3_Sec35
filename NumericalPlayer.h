@@ -1,5 +1,5 @@
 #pragma once
-#include "BoardGame_Classes.h" 
+#include "BoardGame_Classes.h"
 #include <vector>
 #include <string>
 
@@ -9,8 +9,8 @@ private:
     std::vector<int> available_numbers;
 
 public:
-    NumericalPlayer(char symbol, const std::string& name, const std::vector<int>& numbers)
-        : Player<char>(name, symbol, PlayerType::HUMAN), available_numbers(numbers)
+    NumericalPlayer(char symbol, const std::string& name, const std::vector<int>& numbers, PlayerType type)
+        : Player(name, symbol, type), available_numbers(numbers)
     {
     }
 
@@ -26,7 +26,7 @@ public:
     }
 
     void remove_number(int num) {
-        for (size_t i = 0; i < available_numbers.size(); ++i) {
+        for (int i = 0; i < available_numbers.size(); ++i) {
             if (available_numbers[i] == num) {
                 available_numbers.erase(available_numbers.begin() + i);
                 break;
