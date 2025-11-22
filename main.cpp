@@ -7,6 +7,9 @@
 #include "NumericalPlayer.h"
 #include "NumericalBoard.h"
 #include "NumericalUI.h"
+#include "MisereTicTacToe.h"
+#include "DiamondBoard.h"
+
 using namespace std;
 
 void display_menu() {
@@ -76,11 +79,40 @@ void run_game_selection(int choice) {
         cout << "Starting Game: Word Tic-tac-toe..." << endl;
         break;
     case 5:
-        cout << "Starting Game: Misere Tic Tac Toe..." << endl;
+        cout << "Starting Misere Tic Tac Toe..." << endl;
+
+        board = new MisereBoard();
+        players[0] = new Player<char>("Player 1", 'X', PlayerType::HUMAN);
+        players[1] = new Player<char>("Player 2", 'O', PlayerType::HUMAN);
+        ui = new XO_UI();
+
+        gameManager = new GameManager<char>(board, players, ui);
+        gameManager->run();
+
+        delete gameManager;
+        delete board;
+        delete players[0];
+        delete players[1];
+        delete ui; 
         break;
     case 6:
-        cout << "Starting Game: Diamond Tic-Tac-Toe..." << endl;
+        cout << "Starting Diamond Tic-Tac-Toe..." << endl;
+
+        board = new DiamondBoard();
+        players[0] = new Player<char>("Player 1", 'X', PlayerType::HUMAN);
+        players[1] = new Player<char>("Player 2", 'O', PlayerType::HUMAN);
+        ui = new XO_UI();
+
+        gameManager = new GameManager<char>(board, players, ui);
+        gameManager->run();
+
+        delete gameManager;
+        delete board;
+        delete players[0];
+        delete players[1];
+        delete ui;
         break;
+
     case 7:
         cout << "Starting Game: 4x4 Tic-Tac-Toe..." << endl;
         break;

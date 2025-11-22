@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: BoardGameFramework
+# Project: CS213_Assignment3
 # Configurations: Debug
 # =============================================================================
 
@@ -39,74 +39,82 @@ include CMakeFiles\rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\out\build\x64-Debug\
+cmake_ninja_workdir = C$:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35\out\build\x64-Debug\
 # =============================================================================
-# Object build statements for EXECUTABLE target XO_Demo
+# Object build statements for EXECUTABLE target CS213_Assignment3
 
 
 #############################################
-# Order-only phony target for XO_Demo
+# Order-only phony target for CS213_Assignment3
 
-build cmake_object_order_depends_target_XO_Demo: phony || .
+build cmake_object_order_depends_target_CS213_Assignment3: phony || .
 
-build CMakeFiles\XO_Demo.dir\XO_Demo.cpp.obj: CXX_COMPILER__XO_Demo_unscanned_Debug C$:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\XO_Demo.cpp || cmake_object_order_depends_target_XO_Demo
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -IC:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35
-  OBJECT_DIR = CMakeFiles\XO_Demo.dir
-  OBJECT_FILE_DIR = CMakeFiles\XO_Demo.dir
-  TARGET_COMPILE_PDB = CMakeFiles\XO_Demo.dir\
-  TARGET_PDB = XO_Demo.pdb
+build CMakeFiles\CS213_Assignment3.dir\main.cpp.obj: CXX_COMPILER__CS213_Assignment3_unscanned_Debug C$:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35\main.cpp || cmake_object_order_depends_target_CS213_Assignment3
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  INCLUDES = -IC:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35
+  OBJECT_DIR = CMakeFiles\CS213_Assignment3.dir
+  OBJECT_FILE_DIR = CMakeFiles\CS213_Assignment3.dir
+  TARGET_COMPILE_PDB = CMakeFiles\CS213_Assignment3.dir\
+  TARGET_PDB = CS213_Assignment3.pdb
 
-build CMakeFiles\XO_Demo.dir\NumericalBoard.cpp.obj: CXX_COMPILER__XO_Demo_unscanned_Debug C$:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\NumericalBoard.cpp || cmake_object_order_depends_target_XO_Demo
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -IC:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35
-  OBJECT_DIR = CMakeFiles\XO_Demo.dir
-  OBJECT_FILE_DIR = CMakeFiles\XO_Demo.dir
-  TARGET_COMPILE_PDB = CMakeFiles\XO_Demo.dir\
-  TARGET_PDB = XO_Demo.pdb
+build CMakeFiles\CS213_Assignment3.dir\XO_Classes.cpp.obj: CXX_COMPILER__CS213_Assignment3_unscanned_Debug C$:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35\XO_Classes.cpp || cmake_object_order_depends_target_CS213_Assignment3
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  INCLUDES = -IC:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35
+  OBJECT_DIR = CMakeFiles\CS213_Assignment3.dir
+  OBJECT_FILE_DIR = CMakeFiles\CS213_Assignment3.dir
+  TARGET_COMPILE_PDB = CMakeFiles\CS213_Assignment3.dir\
+  TARGET_PDB = CS213_Assignment3.pdb
 
-build CMakeFiles\XO_Demo.dir\NumericalUI.cpp.obj: CXX_COMPILER__XO_Demo_unscanned_Debug C$:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\NumericalUI.cpp || cmake_object_order_depends_target_XO_Demo
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -IC:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35
-  OBJECT_DIR = CMakeFiles\XO_Demo.dir
-  OBJECT_FILE_DIR = CMakeFiles\XO_Demo.dir
-  TARGET_COMPILE_PDB = CMakeFiles\XO_Demo.dir\
-  TARGET_PDB = XO_Demo.pdb
+build CMakeFiles\CS213_Assignment3.dir\NumericalBoard.cpp.obj: CXX_COMPILER__CS213_Assignment3_unscanned_Debug C$:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35\NumericalBoard.cpp || cmake_object_order_depends_target_CS213_Assignment3
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  INCLUDES = -IC:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35
+  OBJECT_DIR = CMakeFiles\CS213_Assignment3.dir
+  OBJECT_FILE_DIR = CMakeFiles\CS213_Assignment3.dir
+  TARGET_COMPILE_PDB = CMakeFiles\CS213_Assignment3.dir\
+  TARGET_PDB = CS213_Assignment3.pdb
 
-build CMakeFiles\XO_Demo.dir\NumericalPlayer.cpp.obj: CXX_COMPILER__XO_Demo_unscanned_Debug C$:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\NumericalPlayer.cpp || cmake_object_order_depends_target_XO_Demo
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -IC:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35
-  OBJECT_DIR = CMakeFiles\XO_Demo.dir
-  OBJECT_FILE_DIR = CMakeFiles\XO_Demo.dir
-  TARGET_COMPILE_PDB = CMakeFiles\XO_Demo.dir\
-  TARGET_PDB = XO_Demo.pdb
+build CMakeFiles\CS213_Assignment3.dir\NumericalUI.cpp.obj: CXX_COMPILER__CS213_Assignment3_unscanned_Debug C$:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35\NumericalUI.cpp || cmake_object_order_depends_target_CS213_Assignment3
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  INCLUDES = -IC:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35
+  OBJECT_DIR = CMakeFiles\CS213_Assignment3.dir
+  OBJECT_FILE_DIR = CMakeFiles\CS213_Assignment3.dir
+  TARGET_COMPILE_PDB = CMakeFiles\CS213_Assignment3.dir\
+  TARGET_PDB = CS213_Assignment3.pdb
+
+build CMakeFiles\CS213_Assignment3.dir\NumericalPlayer.cpp.obj: CXX_COMPILER__CS213_Assignment3_unscanned_Debug C$:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35\NumericalPlayer.cpp || cmake_object_order_depends_target_CS213_Assignment3
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
+  INCLUDES = -IC:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35
+  OBJECT_DIR = CMakeFiles\CS213_Assignment3.dir
+  OBJECT_FILE_DIR = CMakeFiles\CS213_Assignment3.dir
+  TARGET_COMPILE_PDB = CMakeFiles\CS213_Assignment3.dir\
+  TARGET_PDB = CS213_Assignment3.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target XO_Demo
+# Link build statements for EXECUTABLE target CS213_Assignment3
 
 
 #############################################
-# Link the executable XO_Demo.exe
+# Link the executable CS213_Assignment3.exe
 
-build XO_Demo.exe: CXX_EXECUTABLE_LINKER__XO_Demo_Debug CMakeFiles\XO_Demo.dir\XO_Demo.cpp.obj CMakeFiles\XO_Demo.dir\NumericalBoard.cpp.obj CMakeFiles\XO_Demo.dir\NumericalUI.cpp.obj CMakeFiles\XO_Demo.dir\NumericalPlayer.cpp.obj
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1
+build CS213_Assignment3.exe: CXX_EXECUTABLE_LINKER__CS213_Assignment3_Debug CMakeFiles\CS213_Assignment3.dir\main.cpp.obj CMakeFiles\CS213_Assignment3.dir\XO_Classes.cpp.obj CMakeFiles\CS213_Assignment3.dir\NumericalBoard.cpp.obj CMakeFiles\CS213_Assignment3.dir\NumericalUI.cpp.obj CMakeFiles\CS213_Assignment3.dir\NumericalPlayer.cpp.obj
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  OBJECT_DIR = CMakeFiles\XO_Demo.dir
-  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\out\build\x64-Debug && "C:\Program Files\PowerShell\7\pwsh.exe" -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/AdminOS/Downloads/BoardGameFramework-20251111T105336Z-1-001/BoardGameFramework/CS213_Assignment3_Sec35/out/build/x64-Debug/XO_Demo.exe -installedDir C:/vcpkg/installed/x64-windows/debug/bin -OutVariable out"
+  OBJECT_DIR = CMakeFiles\CS213_Assignment3.dir
+  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35\out\build\x64-Debug && "C:\Program Files\PowerShell\7\pwsh.exe" -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/AdminOS/source/repos/abdohossam12122006-rgb/CS213_Assignment3_Sec35/out/build/x64-Debug/CS213_Assignment3.exe -installedDir C:/vcpkg/installed/x64-windows/debug/bin -OutVariable out"
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\XO_Demo.dir\
-  TARGET_FILE = XO_Demo.exe
-  TARGET_IMPLIB = XO_Demo.lib
-  TARGET_PDB = XO_Demo.pdb
+  TARGET_COMPILE_PDB = CMakeFiles\CS213_Assignment3.dir\
+  TARGET_FILE = CS213_Assignment3.exe
+  TARGET_IMPLIB = CS213_Assignment3.lib
+  TARGET_PDB = CS213_Assignment3.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\out\build\x64-Debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35\out\build\x64-Debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -117,7 +125,7 @@ build edit_cache: phony CMakeFiles\edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\out\build\x64-Debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35 -BC:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\out\build\x64-Debug"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35\out\build\x64-Debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35 -BC:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35\out\build\x64-Debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -127,7 +135,7 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build XO_Demo: phony XO_Demo.exe
+build CS213_Assignment3: phony CS213_Assignment3.exe
 
 # =============================================================================
 # Folder targets.
@@ -135,9 +143,9 @@ build XO_Demo: phony XO_Demo.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/AdminOS/Downloads/BoardGameFramework-20251111T105336Z-1-001/BoardGameFramework/CS213_Assignment3_Sec35/out/build/x64-Debug
+# Folder: C:/Users/AdminOS/source/repos/abdohossam12122006-rgb/CS213_Assignment3_Sec35/out/build/x64-Debug
 
-build all: phony XO_Demo.exe
+build all: phony CS213_Assignment3.exe
 
 # =============================================================================
 # Built-in targets
@@ -146,14 +154,14 @@ build all: phony XO_Demo.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDependentOption.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake C$:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\CMakeLists.txt C$:\vcpkg\scripts\buildsystems\vcpkg.cmake CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDependentOption.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake C$:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35\CMakeLists.txt C$:\vcpkg\scripts\buildsystems\vcpkg.cmake CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDependentOption.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake C$:\Users\AdminOS\Downloads\BoardGameFramework-20251111T105336Z-1-001\BoardGameFramework\CS213_Assignment3_Sec35\CMakeLists.txt C$:\vcpkg\scripts\buildsystems\vcpkg.cmake CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake: phony
+build C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDependentOption.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake C$:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35\CMakeLists.txt C$:\vcpkg\scripts\buildsystems\vcpkg.cmake CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake: phony
 
 
 #############################################

@@ -2,42 +2,6 @@
 	"entries" : 
 	[
 		{
-			"name" : "BoardGameFramework_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/AdminOS/Downloads/BoardGameFramework-20251111T105336Z-1-001/BoardGameFramework/CS213_Assignment3_Sec35/out/build/x64-Debug"
-		},
-		{
-			"name" : "BoardGameFramework_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "BoardGameFramework_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/AdminOS/Downloads/BoardGameFramework-20251111T105336Z-1-001/BoardGameFramework/CS213_Assignment3_Sec35"
-		},
-		{
 			"name" : "CMAKE_AR",
 			"properties" : 
 			[
@@ -75,7 +39,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/AdminOS/Downloads/BoardGameFramework-20251111T105336Z-1-001/BoardGameFramework/CS213_Assignment3_Sec35/out/build/x64-Debug"
+			"value" : "c:/Users/AdminOS/source/repos/abdohossam12122006-rgb/CS213_Assignment3_Sec35/out/build/x64-Debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -519,7 +483,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/AdminOS/Downloads/BoardGameFramework-20251111T105336Z-1-001/BoardGameFramework/CS213_Assignment3_Sec35/out/build/x64-Debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/AdminOS/source/repos/abdohossam12122006-rgb/CS213_Assignment3_Sec35/out/build/x64-Debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -579,7 +543,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/AdminOS/Downloads/BoardGameFramework-20251111T105336Z-1-001/BoardGameFramework/CS213_Assignment3_Sec35"
+			"value" : "C:/Users/AdminOS/source/repos/abdohossam12122006-rgb/CS213_Assignment3_Sec35"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -591,7 +555,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/AdminOS/Downloads/BoardGameFramework-20251111T105336Z-1-001/BoardGameFramework/CS213_Assignment3_Sec35/out/install/x64-Debug"
+			"value" : "C:/Users/AdminOS/source/repos/abdohossam12122006-rgb/CS213_Assignment3_Sec35/out/install/x64-Debug"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -775,7 +739,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "BoardGameFramework"
+			"value" : "CS213_Assignment3"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1143,7 +1107,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/AdminOS/Downloads/BoardGameFramework-20251111T105336Z-1-001/BoardGameFramework/CS213_Assignment3_Sec35/out/build/x64-Debug"
+			"value" : "C:/Users/AdminOS/source/repos/abdohossam12122006-rgb/CS213_Assignment3_Sec35/out/build/x64-Debug"
 		},
 		{
 			"name" : "CS213_Assignment3_IS_TOP_LEVEL",
@@ -1167,7 +1131,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/AdminOS/Downloads/BoardGameFramework-20251111T105336Z-1-001/BoardGameFramework/CS213_Assignment3_Sec35"
+			"value" : "C:/Users/AdminOS/source/repos/abdohossam12122006-rgb/CS213_Assignment3_Sec35"
 		},
 		{
 			"name" : "VCPKG_APPLOCAL_DEPS",
