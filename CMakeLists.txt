@@ -9,5 +9,5 @@ add_executable(CS213_Assignment3
     NumericalBoard.cpp
     NumericalUI.cpp
     NumericalPlayer.cpp
- "MisereTicTacToe.h" "DiamondBoard.h")
+ "MisereTicTacToe.h" "DiamondBoard.h" "MisereMinimaxPlayer.h" "MisereUI.h" "DiamondMinimaxPlayer.h" "DiamondUI.h")
 target_include_directories(CS213_Assignment3 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
