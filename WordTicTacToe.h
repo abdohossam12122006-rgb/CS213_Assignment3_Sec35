@@ -48,13 +48,13 @@ public:
         }
         else {
             cerr << "Warning: dictionary file \"" << dict_filename << "\" not found.\n";
-            useDictionary = false;  // if no dictionary, accept any 3-letter word
+            useDictionary = false; 
         }
     }
 
     bool is_valid_word(const string& w) const {
         if (w.size() != 3) return false;
-        if (!useDictionary) return true;  // accept any word
+        if (!useDictionary) return true; 
         string lw = to_lower(w);
         return binary_search(dictionary.begin(), dictionary.end(), lw);
     }
