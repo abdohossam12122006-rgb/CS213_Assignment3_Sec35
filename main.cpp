@@ -89,25 +89,30 @@ void run_game_selection(int choice) {
  delete players[1];
  delete gameManager;
  break;
-   
-    case 4:
-        cout << "Starting Game: Word Tic-tac-toe..." << endl;
+     case 4:
+   {
+       cout << "Starting Game: Word Tic-tac-toe..." << endl;
 
-        board = new WordTicTacToe();
-        players[0] = new Player<char>("Player 1", 'A', PlayerType::HUMAN);
-        players[1] = new Player<char>("Player 2", 'B', PlayerType::HUMAN);
-        ui = new XO_UI();
+       board = new WordTicTacToe();
+       ui = new WordUI();
 
-        gameManager = new GameManager<char>(board, players, ui);
-        gameManager->run();
+       string name1 = "Player 1";
+       string name2 = "Player 2";
 
-        delete board;
-        delete ui;
-        delete players[0];
-        delete players[1];
-        delete gameManager;
-        break;
+       players[0] = ui->create_player(name1, '\0', PlayerType::HUMAN);
+       players[1] = ui->create_player(name2, '\0', PlayerType::HUMAN);
 
+       gameManager = new GameManager<char>(board, players, ui);
+       gameManager->run();
+
+       delete gameManager;
+       delete board;
+       delete ui;
+       delete players[0];
+       delete players[1];
+
+       break;
+   }
     case 5:
         cout << "Starting Misere Tic Tac Toe..." << endl;
 
