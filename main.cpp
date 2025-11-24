@@ -73,8 +73,22 @@ void run_game_selection(int choice) {
         cout << "Starting Game: Four-in-a-row..." << endl;
         break;
     case 3:
-        cout << "Starting Game: 5x5 Tic Tac Toe..." << endl;
-        break;
+         cout << "Starting Game: 5x5 Tic Tac Toe..." << endl;
+
+ board = new FiveByFiveBoard();
+ players[0] = new Player<char>("Player 1", 'X', PlayerType::HUMAN);
+ players[1] = new Player<char>("Player 2", 'O', PlayerType::HUMAN);
+ ui = new XO_UI();
+
+ gameManager = new GameManager<char>(board, players, ui);
+ gameManager->run();
+
+ delete board;
+ delete ui;
+ delete players[0];
+ delete players[1];
+ delete gameManager;
+ break;
     case 4:
         cout << "Starting Game: Word Tic-tac-toe..." << endl;
         break;
