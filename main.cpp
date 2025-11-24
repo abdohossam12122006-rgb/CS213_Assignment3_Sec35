@@ -68,10 +68,49 @@ void run_game_selection(int choice) {
     switch (choice) {
     case 1:
         cout << "Starting Game: SUS..." << endl;
+        SUS_Board* board = new SUS_Board();
+SUS_UI* ui = new SUS_UI();
+
+Player<char>* players[2];
+players[0] = new Player<char>("Player1", 'S', PlayerType::HUMAN);
+players[1] = new Player<char>("Player2", 'U', PlayerType::HUMAN);
+
+GameManager<char> game(board, players, ui);
+game.run();
+
+int s1 = board->count_sequences('S');
+int s2 = 0;
+
+cout << "\nFinal Scores:\n";
+cout << players[0]->get_name() << " (S) = " << s1 << endl;
+cout << players[1]->get_name() << " (U) = " << s2 << endl;
+
+if (s1 > s2) cout << players[0]->get_name() << " wins!\n";
+else if (s2 > s1) cout << players[1]->get_name() << " wins!\n";
+else cout << "Draw!\n";
+delete board;
+       delete ui;
+       delete players[0];
+       delete players[1];
+        
         break;
     case 2:
         cout << "Starting Game: Four-in-a-row..." << endl;
+
+
+        Connect4UI ui;
+Player<char>** players = ui.setup_players();
+Connect4Board board;
+players[0]->set_board_ptr(&board);
+players[1]->set_board_ptr(&board);
+GameManager<char> game(&board, players, &ui);
+game.run();
+delete players[0];
+delete players[1];
+delete[] players;
         break;
+
+        
     case 3:
          cout << "Starting Game: 5x5 Tic Tac Toe..." << endl;
 
