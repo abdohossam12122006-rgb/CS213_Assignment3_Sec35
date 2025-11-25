@@ -26,7 +26,7 @@ bool SUS_Board::update_board(Move<char>* move) {
 int SUS_Board::count_sequences(char symbol) {
     int count = 0;
 
-    // Directions to check (horizontal, vertical, diagonals)
+    
     int dir[4][2] = {
         {1, 0}, {0, 1}, {1, 1}, {1, -1}
     };
@@ -49,7 +49,7 @@ int SUS_Board::count_sequences(char symbol) {
 }
 
 bool SUS_Board::is_win(Player<char>* player) {
-    return false; // No instant win
+    return false; 
 }
 
 bool SUS_Board::is_draw(Player<char>* player) {
@@ -59,4 +59,5 @@ bool SUS_Board::is_draw(Player<char>* player) {
 bool SUS_Board::game_is_over(Player<char>* player) {
     return n_moves == 9;
 }
+
 
