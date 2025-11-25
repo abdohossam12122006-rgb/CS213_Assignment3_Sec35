@@ -8,7 +8,7 @@ MemoryXO_Board::MemoryXO_Board() : Board(3, 3) {
     blank_symbol = '?';
     actual_board.resize(3, vector<char>(3, '.'));
 
-    // Initialize the board as hidden
+    
     for (auto& row : board)
         for (auto& c : row)
             c = blank_symbol;
@@ -22,13 +22,13 @@ bool MemoryXO_Board::update_board(Move<char>* move) {
     if (x < 0 || x >= rows || y < 0 || y >= columns)
         return false;
 
-    if (actual_board[x][y] != '.')  // already taken
+    if (actual_board[x][y] != '.')  
         return false;
 
-    // Store real symbol
+    
     actual_board[x][y] = sym;
 
-    // Hide it on visible board
+    
     board[x][y] = blank_symbol;
 
     n_moves++;
@@ -38,13 +38,12 @@ bool MemoryXO_Board::update_board(Move<char>* move) {
 bool MemoryXO_Board::is_win(Player<char>* player) {
     char s = player->get_symbol();
 
-    // Check rows & columns
+    
     for (int i = 0; i < 3; i++) {
         if (actual_board[i][0] == s && actual_board[i][1] == s && actual_board[i][2] == s) return true;
         if (actual_board[0][i] == s && actual_board[1][i] == s && actual_board[2][i] == s) return true;
     }
-
-    // Diagonals
+    
     if (actual_board[0][0] == s && actual_board[1][1] == s && actual_board[2][2] == s) return true;
     if (actual_board[0][2] == s && actual_board[1][1] == s && actual_board[2][0] == s) return true;
 
@@ -52,7 +51,7 @@ bool MemoryXO_Board::is_win(Player<char>* player) {
 }
 
 bool MemoryXO_Board::is_lose(Player<char>* p) {
-    return false;   // No lose logic
+    return false;  
 }
 
 bool MemoryXO_Board::is_draw(Player<char>* player) {
@@ -77,10 +76,11 @@ Move<char>* MemoryXO_UI::get_move(Player<char>* player) {
         cin >> x >> y;
     }
     else {
-        // Simple random AI
+        
         x = rand() % 3;
         y = rand() % 3;
     }
 
     return new Move<char>(x, y, player->get_symbol());
 }
+
