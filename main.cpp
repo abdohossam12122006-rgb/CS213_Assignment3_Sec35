@@ -71,17 +71,90 @@ static void run_game_selection(int choice) {
     switch (choice) {
     case 1:
         cout << "Starting Game: SUS..." << endl;
+        SUS_Board* board = new SUS_Board();
+SUS_UI* ui = new SUS_UI();
+
+Player<char>* players[2];
+players[0] = new Player<char>("Player1", 'S', PlayerType::HUMAN);
+players[1] = new Player<char>("Player2", 'U', PlayerType::HUMAN);
+
+GameManager<char> game(board, players, ui);
+game.run();
+
+int s1 = board->count_sequences('S');
+int s2 = 0;
+
+cout << "\nFinal Scores:\n";
+cout << players[0]->get_name() << " (S) = " << s1 << endl;
+cout << players[1]->get_name() << " (U) = " << s2 << endl;
+
+if (s1 > s2) cout << players[0]->get_name() << " wins!\n";
+else if (s2 > s1) cout << players[1]->get_name() << " wins!\n";
+else cout << "Draw!\n";
+delete board;
+       delete ui;
+       delete players[0];
+       delete players[1];
+        
         break;
     case 2:
         cout << "Starting Game: Four-in-a-row..." << endl;
-        break;
-    case 3:
-        cout << "Starting Game: 5x5 Tic Tac Toe..." << endl;
-        break;
-    case 4:
-        cout << "Starting Game: Word Tic-tac-toe..." << endl;
+
+
+        Connect4UI ui;
+Player<char>** players = ui.setup_players();
+Connect4Board board;
+players[0]->set_board_ptr(&board);
+players[1]->set_board_ptr(&board);
+GameManager<char> game(&board, players, &ui);
+game.run();
+delete players[0];
+delete players[1];
+delete[] players;
         break;
 
+        
+    case 3:
+         cout << "Starting Game: 5x5 Tic Tac Toe..." << endl;
+
+ board = new FiveByFiveBoard();
+ players[0] = new Player<char>("Player 1", 'X', PlayerType::HUMAN);
+ players[1] = new Player<char>("Player 2", 'O', PlayerType::HUMAN);
+ ui = new XO_UI();
+
+ gameManager = new GameManager<char>(board, players, ui);
+ gameManager->run();
+
+ delete board;
+ delete ui;
+ delete players[0];
+ delete players[1];
+ delete gameManager;
+ break;
+     case 4:
+   {
+       cout << "Starting Game: Word Tic-tac-toe..." << endl;
+
+       board = new WordTicTacToe();
+       ui = new WordUI();
+
+       string name1 = "Player 1";
+       string name2 = "Player 2";
+
+       players[0] = ui->create_player(name1, '\0', PlayerType::HUMAN);
+       players[1] = ui->create_player(name2, '\0', PlayerType::HUMAN);
+
+       gameManager = new GameManager<char>(board, players, ui);
+       gameManager->run();
+
+       delete gameManager;
+       delete board;
+       delete ui;
+       delete players[0];
+       delete players[1];
+
+       break;
+   }
     case 5:
         cout << "Starting Misere Tic Tac Toe..." << endl;
 
