@@ -1,12 +1,11 @@
-#ifndef GAME_7_.H
-#define GAME_7_.H
+#ifndef GAME_7__H
+#define GAME_7__H
 #include "BoardGame_Classes.h"
 #include <iostream>
 #include <iomanip>
 #include <algorithm>
 #include <vector>
-#include <cstdlib> 
-#include <ctime> 
+
 using namespace std;
 class Game7_Board : public Board<char> {
 public:
