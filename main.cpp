@@ -233,6 +233,16 @@ delete[] players;
         break;
     case 13:
         cout << "Starting Game: Memory Tic-Tac-Toe..." << endl;
+        MemoryXO_UI ui;
+Player<char>** players = ui.setup_players();
+MemoryXO_Board board;
+players[0]->set_board_ptr(&board);
+players[1]->set_board_ptr(&board);
+GameManager<char> gm(&board, players, &ui);
+gm.run();
+delete players[0];
+delete players[1];
+delete[] players;
         break;
     case 14:
         cout << "Starting Game: (Example) X-O Game..." << endl;
