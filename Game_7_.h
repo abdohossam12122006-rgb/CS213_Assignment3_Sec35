@@ -37,7 +37,7 @@ public:
 		for (int i = 0; i < this->rows; i++) {
 			for (int j = 0; j < this->columns; j++) {
 
-				// 1. horizontal (3 رموز متتالية)
+				// 1. horizontal 
 			
 				if (j + 2 < this->columns &&
 					this->board[i][j] == symbol &&
