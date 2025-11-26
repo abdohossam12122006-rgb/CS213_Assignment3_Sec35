@@ -28,6 +28,9 @@
 #include "DiamondMinimaxPlayer.h"
 #include "DiamondUI.h"
 
+#include "Game_7_.h"
+#include "Pyramid.h"
+
 using namespace std;
 
 void display_menu() {
@@ -171,6 +174,40 @@ void run_game_selection(int choice) {
         gameManager->run();
         break;
     }
+         case 7: { // 4x4 Tic-Tac-Toe
+     cout << "Starting Game: 4x4 Tic-Tac-Toe..." << endl;
+     Game7_Board* board = new Game7_Board();
+     Game7_UI* ui = new Game7_UI();
+
+     Player<char>** players = ui->setup_players();
+     GameManager<char>* manager = new GameManager<char>(board, players, ui);
+     manager->run();
+
+     delete board;
+     delete ui;
+     delete manager;
+     delete[] players;
+     break;
+ }
+        case 8: { // Pyramid Tic-Tac-Toe
+    cout << "Starting Game: Pyramid Tic-Tac-Toe..." << endl;
+
+    Pyramid_Board* board = new Pyramid_Board();
+
+    Pyramid_UI* ui = new Pyramid_UI(); // <--- تم التصحيح إلى Pyramid_UI
+
+    Player<char>** players = ui->setup_players();
+
+    GameManager<char>* manager = new GameManager<char>(board, players, ui);
+
+    manager->run();
+
+    delete board;
+    delete ui;
+    delete manager;
+    delete[] players;
+    break;
+}
 
     case 10:
     {
