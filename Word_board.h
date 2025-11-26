@@ -1,98 +1,174 @@
-#ifndef WORD_BOARD_H
-#define WORD_BOARD_H
+#ifndef WORDTICTACTOE_H
+#define WORDTICTACTOE_H
 
 #include "BoardGame_Classes.h"
-#include <iostream>
-#include <vector>
 #include <fstream>
-#include <set>
+#include <string>
+#include <vector>
 #include <algorithm>
+#include <cctype>
+#include <iostream>
 
 using namespace std;
 
-class WordBoard : public Board<char> {
+class WordTicTacToe : public Board<char> {
 private:
-    set<string> dictionary;
+    vector<string> dictionary;
+    string winningWord = "";
+    bool useDictionary = true;  
 
-public:
-    WordBoard() : Board<char>(3, 3) {
-        this->n_moves = 0;
-        load_dictionary("dic.txt");
-
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 3; j++)
-                this->board[i][j] = 0;
+    static string to_lower(const string& s) {
+        string out = s;
+        for (char& c : out) c = char(tolower((unsigned char)c));
+        return out;
     }
 
-    void load_dictionary(string filename) {
-        ifstream file(filename);
-        string word;
-        if (file.is_open()) {
-            while (file >> word) {
-                transform(word.begin(), word.end(), word.begin(), ::toupper);
-                if (word.length() == 3) {
-                    dictionary.insert(word);
+public:
+    WordTicTacToe(const string& dict_filename = "dic.txt")
+        : Board<char>(3, 3)
+    {
+        n_moves = 0;
+
+        for (int i = 0; i < rows; ++i)
+            for (int j = 0; j < columns; ++j)
+                board[i][j] = 0;
+
+        ifstream fin(dict_filename);
+        if (fin) {
+            string w;
+            while (fin >> w) {
+                if (w.size() == 3) {
+                    dictionary.push_back(to_lower(w));
                 }
             }
-            file.close();
+            fin.close();
+
+            sort(dictionary.begin(), dictionary.end());
+            dictionary.erase(unique(dictionary.begin(), dictionary.end()), dictionary.end());
         }
         else {
-            cout << "Warning: dic.txt not found! Game logic might fail." << endl;
+            cerr << "Warning: dictionary file \"" << dict_filename << "\" not found.\n";
+            useDictionary = false; 
         }
+    }
+
+    bool is_valid_word(const string& w) const {
+        if (w.size() != 3) return false;
+        if (!useDictionary) return true; 
+        string lw = to_lower(w);
+        return binary_search(dictionary.begin(), dictionary.end(), lw);
     }
 
     bool update_board(Move<char>* move) override {
-        int x = move->get_x();
-        int y = move->get_y();
+        int r = move->get_x();
+        int c = move->get_y();
+        char ch = move->get_symbol();
 
-        if (x < 0 || x >= 3 || y < 0 || y >= 3 || this->board[x][y] != 0) {
-            return false;
-        }
+        if (r < 0 || r >= rows || c < 0 || c >= columns) return false;
+        if (board[r][c] != 0) return false;
 
-        this->board[x][y] = toupper(move->get_symbol());
-        this->n_moves++;
+        ch = toupper(ch);
+        board[r][c] = ch;
+
+        ++n_moves;
         return true;
     }
 
-    bool is_word_valid(string s) {
-        return dictionary.count(s);
-    }
+    bool is_win(Player<char>* /*player*/) override {
+        winningWord = "";
 
-    bool is_win(Player<char>* p) override {
-        for (int i = 0; i < 3; i++) {
-            string s = "";
-            s += board[i][0]; s += board[i][1]; s += board[i][2];
-            if (s.find((char)0) == string::npos && is_word_valid(s)) return true;
+        // rows
+        for (int i = 0; i < 3; ++i) {
+            if (board[i][0] && board[i][1] && board[i][2]) {
+                string s = { board[i][0], board[i][1], board[i][2] };
+                if (is_valid_word(s)) {
+                    winningWord = s;
+                    return true;
+                }
+            }
         }
 
-        for (int j = 0; j < 3; j++) {
-            string s = "";
-            s += board[0][j]; s += board[1][j]; s += board[2][j];
-            if (s.find((char)0) == string::npos && is_word_valid(s)) return true;
+        // columns
+        for (int j = 0; j < 3; ++j) {
+            if (board[0][j] && board[1][j] && board[2][j]) {
+                string s = { board[0][j], board[1][j], board[2][j] };
+                if (is_valid_word(s)) {
+                    winningWord = s;
+                    return true;
+                }
+            }
         }
 
-        string d1 = "";
-        d1 += board[0][0]; d1 += board[1][1]; d1 += board[2][2];
-        if (d1.find((char)0) == string::npos && is_word_valid(d1)) return true;
+        // main diagonal
+        if (board[0][0] && board[1][1] && board[2][2]) {
+            string s = { board[0][0], board[1][1], board[2][2] };
+            if (is_valid_word(s)) {
+                winningWord = s;
+                return true;
+            }
+        }
 
-        string d2 = "";
-        d2 += board[0][2]; d2 += board[1][1]; d2 += board[2][0];
-        if (d2.find((char)0) == string::npos && is_word_valid(d2)) return true;
+        // anti diagonal
+        if (board[0][2] && board[1][1] && board[2][0]) {
+            string s = { board[0][2], board[1][1], board[2][0] };
+            if (is_valid_word(s)) {
+                winningWord = s;
+                return true;
+            }
+        }
 
         return false;
     }
 
-    bool is_draw(Player<char>* p) override {
-        return (this->n_moves == 9 && !is_win(p));
+    string getWinningWord() const {
+        return winningWord;
     }
 
-    bool game_is_over(Player<char>* p) override {
-        return is_win(p) || is_draw(p);
+    bool is_draw(Player<char>* /*player*/) override {
+        return (n_moves == 9 && !is_win(nullptr));
     }
 
-    bool is_lose(Player<char>* p) override {
-        return !is_win(p) && game_is_over(p);
+    bool is_lose(Player<char>* /*player*/) override { return false; }
+
+    bool game_is_over(Player<char>* player) override {
+        return is_win(player) || is_draw(player);
+    }
+
+    char get_cell(int r, int c) const {
+        if (r < 0 || r >= rows || c < 0 || c >= columns) return 0;
+        return board[r][c];
     }
 };
 
-#endif
+// ================= UI =================
+
+class WordUI : public UI<char> {
+public:
+    WordUI() : UI<char>("Word Tic-Tac-Toe", 3) {}
+
+    Player<char>* create_player(string& name, char symbol, PlayerType type) override {
+        return new Player<char>(name, symbol, type);
+    }
+
+    Move<char>* get_move(Player<char>* player) override {
+        char ch;
+        int r, c;
+
+        cout << player->get_name() << " enter letter and coordinates\n";
+
+        cout << "Letter (A-Z): ";
+        cin >> ch;
+        ch = toupper(ch);
+
+        cout << "Row (0-2): ";
+        cin >> r;
+
+        cout << "Col (0-2): ";
+        cin >> c;
+
+        return new Move<char>(r, c, ch);
+    }
+};
+
+#endif // WORDTICTACTOE_H
+
