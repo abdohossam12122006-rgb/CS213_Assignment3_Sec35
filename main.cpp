@@ -4,7 +4,8 @@
 #include <limits>
 #include "BoardGame_Classes.h"
 #include "XO_Classes.h"
-
+#include "ObstaclesBoard.h"
+#include "ObstaclesUI.h"
 // --- Game Headers ---
 // Group 1
 #include "SUS_Board.h"
@@ -39,6 +40,7 @@ void display_menu() {
     cout << " 4. Word Tic-tac-toe (Ready)\n";
     cout << " 5. Misere Tic Tac Toe\n";
     cout << " 6. Diamond Tic-Tac-Toe\n";
+    cout << " 10. OBSTACLESBOARD\n";
     cout << " 14. X-O Game (Example)\n";
     cout << " 0. Exit\n";
     cout << "========================================\n";
@@ -84,37 +86,46 @@ void run_game_selection(int choice) {
     }
 
           // --- Game 3: 5x5 Tic Tac Toe (NEW) ---
-    case 3: {
-        cout << "\n--- Starting 5x5 Tic Tac Toe ---\n";
-        cout << "Goal: Get the most 3-in-a-rows (vertical, horizontal, diagonal).\n";
-        board = new FiveByFiveBoard();
-        players[0] = new Player<char>("P1", 'X', PlayerType::HUMAN);
-        players[1] = new Player<char>("P2", 'O', PlayerType::HUMAN);
 
+    case 3:
+        cout << "Starting Game: 5x5 Tic Tac Toe..." << endl;
+
+        board = new FiveByFiveBoard();
+        players[0] = new Player<char>("Player 1", 'X', PlayerType::HUMAN);
+        players[1] = new Player<char>("Player 2", 'O', PlayerType::HUMAN);
         ui = new XO_UI();
 
         gameManager = new GameManager<char>(board, players, ui);
         gameManager->run();
 
-        if (auto b = dynamic_cast<FiveByFiveBoard*>(board)) {
-            cout << "X Count: " << b->count_three_in_a_row('X') << endl;
-            cout << "O Count: " << b->count_three_in_a_row('O') << endl;
-        }
+        delete board;
+        delete ui;
+        delete players[0];
+        delete players[1];
+        delete gameManager;
         break;
-    }
+    case 4:
+    {
+        cout << "Starting Game: Word Tic-tac-toe..." << endl;
 
-          // --- Game 4: Word Tic-tac-toe (NEW) ---
-    case 4: {
-        cout << "\n--- Starting Word Tic-tac-toe ---\n";
-        cout << "Goal: Form a valid English word (3 letters).\n";
-        board = new WordBoard();
-        players[0] = new Player<char>("P1", '?', PlayerType::HUMAN);
-        players[1] = new Player<char>("P2", '?', PlayerType::HUMAN);
+        board = new WordTicTacToe();
+        ui = new WordUI();
 
-        ui = new Word_UI();
+        string name1 = "Player 1";
+        string name2 = "Player 2";
+
+        players[0] = ui->create_player(name1, '\0', PlayerType::HUMAN);
+        players[1] = ui->create_player(name2, '\0', PlayerType::HUMAN);
 
         gameManager = new GameManager<char>(board, players, ui);
         gameManager->run();
+
+        delete gameManager;
+        delete board;
+        delete ui;
+        delete players[0];
+        delete players[1];
+
         break;
     }
 
@@ -161,7 +172,30 @@ void run_game_selection(int choice) {
         break;
     }
 
+    case 10:
+    {
+        cout << "Starting Game: ObstaclesBoard..." << endl;
+        board = new ObstaclesBoard();
+        ui = new ObstaclesUI();
 
+        string name1 = "Player X";
+        string name2 = "Player O";
+
+        players[0] = ui->create_player(name1, 'X', PlayerType::HUMAN);
+        players[1] = ui->create_player(name2, 'O', PlayerType::HUMAN);
+
+        gameManager = new GameManager<char>(board, players, ui);
+        gameManager->run();
+
+        delete gameManager;
+        delete board;
+        delete ui;
+        delete players[0];
+        delete players[1];
+        break;
+    }
+
+        
           // --- Example Game ---
     case 14: {
         board = new X_O_Board();
@@ -198,3 +232,4 @@ int main() {
     }
     return 0;
 }
+
