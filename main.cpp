@@ -24,6 +24,9 @@
 #include "MisereMinimaxPlayer.h"
 #include "MisereUI.h"
 #include "DiamondBoard.h"
+#include "DiamondMinimaxPlayer.h"
+#include "DiamondUI.h"
+#include "Game_7_h"
 
 using namespace std;
 
