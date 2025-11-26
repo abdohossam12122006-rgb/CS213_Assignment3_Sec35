@@ -65,30 +65,6 @@ build CMakeFiles\CS213_Assignment3.dir\XO_Classes.cpp.obj: CXX_COMPILER__CS213_A
   TARGET_COMPILE_PDB = CMakeFiles\CS213_Assignment3.dir\
   TARGET_PDB = CS213_Assignment3.pdb
 
-build CMakeFiles\CS213_Assignment3.dir\NumericalBoard.cpp.obj: CXX_COMPILER__CS213_Assignment3_unscanned_Debug C$:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35\NumericalBoard.cpp || cmake_object_order_depends_target_CS213_Assignment3
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
-  INCLUDES = -IC:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35
-  OBJECT_DIR = CMakeFiles\CS213_Assignment3.dir
-  OBJECT_FILE_DIR = CMakeFiles\CS213_Assignment3.dir
-  TARGET_COMPILE_PDB = CMakeFiles\CS213_Assignment3.dir\
-  TARGET_PDB = CS213_Assignment3.pdb
-
-build CMakeFiles\CS213_Assignment3.dir\NumericalUI.cpp.obj: CXX_COMPILER__CS213_Assignment3_unscanned_Debug C$:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35\NumericalUI.cpp || cmake_object_order_depends_target_CS213_Assignment3
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
-  INCLUDES = -IC:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35
-  OBJECT_DIR = CMakeFiles\CS213_Assignment3.dir
-  OBJECT_FILE_DIR = CMakeFiles\CS213_Assignment3.dir
-  TARGET_COMPILE_PDB = CMakeFiles\CS213_Assignment3.dir\
-  TARGET_PDB = CS213_Assignment3.pdb
-
-build CMakeFiles\CS213_Assignment3.dir\NumericalPlayer.cpp.obj: CXX_COMPILER__CS213_Assignment3_unscanned_Debug C$:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35\NumericalPlayer.cpp || cmake_object_order_depends_target_CS213_Assignment3
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd
-  INCLUDES = -IC:\Users\AdminOS\source\repos\abdohossam12122006-rgb\CS213_Assignment3_Sec35
-  OBJECT_DIR = CMakeFiles\CS213_Assignment3.dir
-  OBJECT_FILE_DIR = CMakeFiles\CS213_Assignment3.dir
-  TARGET_COMPILE_PDB = CMakeFiles\CS213_Assignment3.dir\
-  TARGET_PDB = CS213_Assignment3.pdb
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CS213_Assignment3
@@ -97,7 +73,7 @@ build CMakeFiles\CS213_Assignment3.dir\NumericalPlayer.cpp.obj: CXX_COMPILER__CS
 #############################################
 # Link the executable CS213_Assignment3.exe
 
-build CS213_Assignment3.exe: CXX_EXECUTABLE_LINKER__CS213_Assignment3_Debug CMakeFiles\CS213_Assignment3.dir\main.cpp.obj CMakeFiles\CS213_Assignment3.dir\XO_Classes.cpp.obj CMakeFiles\CS213_Assignment3.dir\NumericalBoard.cpp.obj CMakeFiles\CS213_Assignment3.dir\NumericalUI.cpp.obj CMakeFiles\CS213_Assignment3.dir\NumericalPlayer.cpp.obj
+build CS213_Assignment3.exe: CXX_EXECUTABLE_LINKER__CS213_Assignment3_Debug CMakeFiles\CS213_Assignment3.dir\main.cpp.obj CMakeFiles\CS213_Assignment3.dir\XO_Classes.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

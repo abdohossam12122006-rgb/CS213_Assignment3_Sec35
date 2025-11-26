@@ -6,30 +6,23 @@
 #include "XO_Classes.h"
 #include "ObstaclesBoard.h"
 #include "ObstaclesUI.h"
-// --- Game Headers ---
-// Group 1
 #include "SUS_Board.h"
 #include "SUS_UI.h"
-
-// Group 2
 #include "Four_in_a_row_Board.h"
 #include "Four_in_a_row_Random_Player.h"
-
-// Group 3 (NEW)
 #include "FiveByFiveBoard.h"
 #include "Word_Board.h"
 #include "Word_UI.h"
-
-// Group 4 & Others
 #include "MisereTicTacToe.h"
 #include "MisereMinimaxPlayer.h"
 #include "MisereUI.h"
 #include "DiamondBoard.h"
 #include "DiamondMinimaxPlayer.h"
 #include "DiamondUI.h"
-
 #include "Game_7_.h"
 #include "Pyramid.h"
+#include "NumericalBoard.h"
+#include "NumericalUI.h"
 
 using namespace std;
 
@@ -39,11 +32,17 @@ void display_menu() {
     cout << "========================================\n";
     cout << " 1. SUS Game\n";
     cout << " 2. Four-in-a-row Game\n";
-    cout << " 3. 5x5 Tic Tac Toe (Ready)\n";
-    cout << " 4. Word Tic-tac-toe (Ready)\n";
-    cout << " 5. Misere Tic Tac Toe\n";
-    cout << " 6. Diamond Tic-Tac-Toe\n";
-    cout << " 10. OBSTACLESBOARD\n";
+    cout << " 3. 5x5 Tic Tac Toe Game \n";
+    cout << " 4. Word Tic-tac-toe Game\n";
+    cout << " 5. Misere Tic Tac Toe Game \n";
+    cout << " 6. Diamond Tic-Tac-Toe Game \n";
+    cout << " 7. 4x4 Tic-Tac-Toe Game\n";
+    cout << " 8. Pyramid Tic-Tac-Toe Game\n";
+    cout << " 9. Numerical Tic-Tac-Toen Game\n";
+    cout << " 10. Obstacles Tic-Tac-Toen Game\n";
+    cout << " 11. Infinity Tic-Tac-Toe Game\n";
+    cout << " 12. Ultimate Tic-Tac-Toe Game\n";
+    cout << " 13. Memory Tic-Tac-Toe Game\n";
     cout << " 14. X-O Game (Example)\n";
     cout << " 0. Exit\n";
     cout << "========================================\n";
@@ -107,6 +106,7 @@ void run_game_selection(int choice) {
         delete players[1];
         delete gameManager;
         break;
+
     case 4:
     {
         cout << "Starting Game: Word Tic-tac-toe..." << endl;
@@ -174,7 +174,7 @@ void run_game_selection(int choice) {
         gameManager->run();
         break;
     }
-         case 7: { // 4x4 Tic-Tac-Toe
+         case 7: {
      cout << "Starting Game: 4x4 Tic-Tac-Toe..." << endl;
      Game7_Board* board = new Game7_Board();
      Game7_UI* ui = new Game7_UI();
@@ -194,7 +194,7 @@ void run_game_selection(int choice) {
 
     Pyramid_Board* board = new Pyramid_Board();
 
-    Pyramid_UI* ui = new Pyramid_UI(); // <--- تم التصحيح إلى Pyramid_UI
+    Pyramid_UI* ui = new Pyramid_UI(); 
 
     Player<char>** players = ui->setup_players();
 
@@ -208,7 +208,22 @@ void run_game_selection(int choice) {
     delete[] players;
     break;
 }
+              // --- Game 9: Numerical Tic-Tac-Toe ---
+        case 9: {
+            cout << "\n--- Starting Numerical Tic-Tac-Toe ---\n";
+            cout << "Player 1: Odd Numbers (1,3,5,7,9)\n";
+            cout << "Player 2: Even Numbers (2,4,6,8)\n";
+            cout << "Goal: Sum of 15 in any line.\n";
 
+            board = new NumericalBoard();
+            players[0] = new Player<char>("P1", '1', PlayerType::HUMAN); 
+            players[1] = new Player<char>("P2", '2', PlayerType::HUMAN);
+            ui = new Numerical_UI();
+
+            gameManager = new GameManager<char>(board, players, ui);
+            gameManager->run();
+            break;
+        }
     case 10:
     {
         cout << "Starting Game: ObstaclesBoard..." << endl;
