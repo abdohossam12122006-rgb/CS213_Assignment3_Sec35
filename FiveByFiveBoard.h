@@ -1,103 +1,116 @@
-#ifndef FIVEBYFIVEBOARD_H
-#define FIVEBYFIVEBOARD_H
+#ifndef FIVE_BY_FIVE_BOARD_H
+#define FIVE_BY_FIVE_BOARD_H
 
 #include "BoardGame_Classes.h"
+#include <iostream>
 #include <vector>
+
 using namespace std;
 
 class FiveByFiveBoard : public Board<char> {
 public:
     FiveByFiveBoard() : Board<char>(5, 5) {
         this->n_moves = 0;
-        for (int i = 0; i < rows; i++)
-            for (int j = 0; j < columns; j++)
-                board[i][j] = 0;
+
+        for (int i = 0; i < this->rows; i++)
+            for (int j = 0; j < this->columns; j++)
+                this->board[i][j] = 0;
     }
 
     bool update_board(Move<char>* move) override {
-        int r = move->get_x();
-        int c = move->get_y();
-        char sym = move->get_symbol();
+        int x = move->get_x();
+        int y = move->get_y();
 
-        if (r < 0 || r >= 5 || c < 0 || c >= 5) return false;
-        if (board[r][c] != 0) return false;
+        if (x < 0 || x >= this->rows || y < 0 || y >= this->columns || this->board[x][y] != 0) {
+            return false;
+        }
 
-        board[r][c] = sym;
-        n_moves++;
+        this->board[x][y] = move->get_symbol();
+        this->n_moves++;
         return true;
     }
 
+    int count_three_in_a_row(char symbol) {
+        int count = 0;
 
-    int count_threes(char symbol) {
-        int total = 0;
+        // Horizontal
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j <= 2; j++) {
+                if (this->board[i][j] == symbol &&
+                    this->board[i][j + 1] == symbol &&
+                    this->board[i][j + 2] == symbol) {
+                    count++;
+                }
+            }
+        }
 
-        // rows
-        for (int i = 0; i < 5; i++)
-            for (int j = 0; j < 3; j++)
-                if (board[i][j] == symbol &&
-                    board[i][j + 1] == symbol &&
-                    board[i][j + 2] == symbol)
-                    total++;
+        // Vertical
+        for (int j = 0; j < 5; j++) {
+            for (int i = 0; i <= 2; i++) {
+                if (this->board[i][j] == symbol &&
+                    this->board[i + 1][j] == symbol &&
+                    this->board[i + 2][j] == symbol) {
+                    count++;
+                }
+            }
+        }
 
-        // columns
-        for (int j = 0; j < 5; j++)
-            for (int i = 0; i < 3; i++)
-                if (board[i][j] == symbol &&
-                    board[i + 1][j] == symbol &&
-                    board[i + 2][j] == symbol)
-                    total++;
+        // Main diagonal
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <= 2; j++) {
+                if (this->board[i][j] == symbol &&
+                    this->board[i + 1][j + 1] == symbol &&
+                    this->board[i + 2][j + 2] == symbol)
+                    count++;
+            }
+        }
 
-        // Diagonals (main)
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 3; j++)
-                if (board[i][j] == symbol &&
-                    board[i + 1][j + 1] == symbol &&
-                    board[i + 2][j + 2] == symbol)
-                    total++;
+        // Anti diagonal
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 2; j < 5; j++) {
+                if (this->board[i][j] == symbol &&
+                    this->board[i + 1][j - 1] == symbol &&
+                    this->board[i + 2][j - 2] == symbol)
+                    count++;
+            }
+        }
 
-        // Diagonals (anti)
-        for (int i = 0; i < 3; i++)
-            for (int j = 2; j < 5; j++)
-                if (board[i][j] == symbol &&
-                    board[i + 1][j - 1] == symbol &&
-                    board[i + 2][j - 2] == symbol)
-                    total++;
-
-        return total;
+        return count;
     }
 
-    bool is_win(Player<char>* player) override {
-        char sym = player->get_symbol();
-        char opp = (sym == 'X' ? 'O' : 'X');
+    bool is_win(Player<char>* p) override {
+        if (this->n_moves < 24) return false;
 
-        int myScore = count_threes(sym);
-        int oppScore = count_threes(opp);
+        char my_symbol = p->get_symbol();
+        char opp_symbol = 0;
 
+        // Find opponent symbol
+        for (int i = 0; i < 5; ++i) {
+            for (int j = 0; j < 5; ++j) {
+                if (board[i][j] != 0 && board[i][j] != my_symbol) {
+                    opp_symbol = board[i][j];
+                    break;
+                }
+            }
+            if (opp_symbol != 0) break;
+        }
 
-        if (n_moves == 24)
-            return myScore > oppScore;
+        if (opp_symbol == 0) return false;
 
-        return false;
+        return count_three_in_a_row(my_symbol) > count_three_in_a_row(opp_symbol);
     }
 
-    bool is_draw(Player<char>* player) override {
-        if (n_moves < 24) return false;
-
-        char sym = player->get_symbol();
-        char opp = (sym == 'X' ? 'O' : 'X');
-
-        return count_threes(sym) == count_threes(opp);
+    bool is_draw(Player<char>* p) override {
+        if (this->n_moves < 24) return false;
+        return !is_win(p);
     }
 
-    bool is_lose(Player<char>* player) override {
-        return false;
+    bool game_is_over(Player<char>* p) override {
+        return this->n_moves == 24;
     }
-
-    bool game_is_over(Player<char>* player) override {
-        return n_moves == 24;
+    bool is_lose(Player<char>* p) override {
+        return !is_win(p) && game_is_over(p);
     }
 };
 
 #endif
-
-

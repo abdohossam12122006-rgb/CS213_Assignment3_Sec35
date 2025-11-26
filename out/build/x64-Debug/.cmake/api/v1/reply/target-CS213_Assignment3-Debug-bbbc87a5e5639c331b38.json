@@ -131,7 +131,11 @@
 				7,
 				8,
 				9,
-				10
+				10,
+				11,
+				12,
+				13,
+				14
 			]
 		}
 	],
@@ -195,6 +199,26 @@
 		{
 			"backtrace" : 2,
 			"path" : "DiamondUI.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "SUS_Board.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "Four_in_a_row_Random_Player.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "Word_UI.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "ORD_TicTacToe_UI.h",
 			"sourceGroupIndex" : 1
 		}
 	],
