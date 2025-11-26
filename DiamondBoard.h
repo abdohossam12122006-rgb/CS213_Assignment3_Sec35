@@ -95,4 +95,3 @@ public:
 };
 
 #endif // DIAMOND_BOARD_H
-#endif // DIAMOND_BOARD_H

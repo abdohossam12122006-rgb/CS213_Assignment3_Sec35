@@ -26,7 +26,6 @@
 #include "DiamondBoard.h"
 #include "DiamondMinimaxPlayer.h"
 #include "DiamondUI.h"
-#include "Game_7_h"
 
 using namespace std;
 
@@ -62,7 +61,6 @@ void run_game_selection(int choice) {
         gameManager = new GameManager<char>(board, players, ui);
         gameManager->run();
 
-        // ÚÑÖ ÇáäÊíÌÉ ÇáÎÇÕÉ ÈÜ SUS
         if (auto susBoard = dynamic_cast<SUS_Board*>(board)) {
             cout << "Score -> P1: " << susBoard->get_score(0)
                 << " | P2: " << susBoard->get_score(1) << endl;
@@ -79,7 +77,7 @@ void run_game_selection(int choice) {
         if (c == 2) players[1] = new Four_in_a_row_Random_Player<char>('O');
         else players[1] = new Player<char>("P2", 'O', PlayerType::HUMAN);
 
-        ui = new XO_UI(); // ÈäÓÊÎÏã ÇáÜ UI ÇáÚÇÏí æÇááÇÚÈ íÏÎá 0 İí ÇáÜ x
+        ui = new XO_UI(); 
         gameManager = new GameManager<char>(board, players, ui);
         gameManager->run();
         break;
@@ -93,13 +91,11 @@ void run_game_selection(int choice) {
         players[0] = new Player<char>("P1", 'X', PlayerType::HUMAN);
         players[1] = new Player<char>("P2", 'O', PlayerType::HUMAN);
 
-        // ÇáÜ UI ÇáÚÇÏí íäİÚ åäÇ áÃäåÇ X æ O ÚÇÏí
         ui = new XO_UI();
 
         gameManager = new GameManager<char>(board, players, ui);
         gameManager->run();
 
-        // ÚÑÖ ÚÏÏ ÇáËáÇËíÇÊ áßá áÇÚÈ (ÇÎÊíÇÑí ááÊæÖíÍ)
         if (auto b = dynamic_cast<FiveByFiveBoard*>(board)) {
             cout << "X Count: " << b->count_three_in_a_row('X') << endl;
             cout << "O Count: " << b->count_three_in_a_row('O') << endl;
@@ -112,10 +108,9 @@ void run_game_selection(int choice) {
         cout << "\n--- Starting Word Tic-tac-toe ---\n";
         cout << "Goal: Form a valid English word (3 letters).\n";
         board = new WordBoard();
-        players[0] = new Player<char>("P1", '?', PlayerType::HUMAN); // ÇáÑãÒ ãÔ ãåã
+        players[0] = new Player<char>("P1", '?', PlayerType::HUMAN);
         players[1] = new Player<char>("P2", '?', PlayerType::HUMAN);
 
-        // åäÇ áÇÒã äÓÊÎÏã ÇáÜ UI ÇáÌÏíÏ Çááí ÈíØáÈ ÇáÍÑİ
         ui = new Word_UI();
 
         gameManager = new GameManager<char>(board, players, ui);
@@ -142,14 +137,30 @@ void run_game_selection(int choice) {
 
           // --- Game 6: Diamond ---
     case 6: {
+        cout << "\n--- Diamond Tic-Tac-Toe ---\n";
         board = new DiamondBoard();
+
         players[0] = new Player<char>("P1", 'X', PlayerType::HUMAN);
-        players[1] = new Player<char>("P2", 'O', PlayerType::HUMAN);
-        ui = new XO_UI();
+
+        cout << "1. Human vs Human\n2. Human vs AI\nChoice: ";
+        int c;
+        cin >> c;
+
+        if (c == 2) {
+            players[1] = new DiamondMinimaxPlayer<char>("AI", 'O');
+            players[1]->set_board_ptr(board);
+            cout << "AI is ready!\n";
+        }
+        else {
+            players[1] = new Player<char>("P2", 'O', PlayerType::HUMAN);
+        }
+
+        ui = new DiamondUI();
         gameManager = new GameManager<char>(board, players, ui);
         gameManager->run();
         break;
     }
+
 
           // --- Example Game ---
     case 14: {
@@ -167,7 +178,6 @@ void run_game_selection(int choice) {
         break;
     }
 
-    // ÊäÙíİ ÇáĞÇßÑÉ
     if (gameManager) delete gameManager;
     if (board) delete board;
     if (players[0]) delete players[0];
