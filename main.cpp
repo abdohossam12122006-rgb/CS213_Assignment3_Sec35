@@ -12,7 +12,6 @@
 #include "Four_in_a_row_Random_Player.h"
 #include "FiveByFiveBoard.h"
 #include "Word_Board.h"
-#include "Word_UI.h"
 #include "MisereTicTacToe.h"
 #include "MisereMinimaxPlayer.h"
 #include "MisereUI.h"
@@ -43,7 +42,7 @@ void display_menu() {
     cout << " 11. Infinity Tic-Tac-Toe Game\n";
     cout << " 12. Ultimate Tic-Tac-Toe Game\n";
     cout << " 13. Memory Tic-Tac-Toe Game\n";
-    cout << " 14. X-O Game (Example)\n";
+    cout << " 14. X-O Game\n";
     cout << " 0. Exit\n";
     cout << "========================================\n";
     cout << "Enter your choice: ";
@@ -56,7 +55,7 @@ void run_game_selection(int choice) {
     GameManager<char>* gameManager = nullptr;
 
     switch (choice) {
-        // --- Game 1: SUS ---
+        // Game 1: SUS 
     case 1: {
         board = new SUS_Board();
         players[0] = new Player<char>("P1", 'S', PlayerType::HUMAN);
@@ -72,7 +71,7 @@ void run_game_selection(int choice) {
         break;
     }
 
-          // --- Game 2: Four-in-a-row ---
+          //  Game 2: Four-in-a-row 
     case 2: {
         board = new Four_in_a_row_Board();
         players[0] = new Player<char>("P1", 'X', PlayerType::HUMAN);
@@ -87,7 +86,7 @@ void run_game_selection(int choice) {
         break;
     }
 
-          // --- Game 3: 5x5 Tic Tac Toe (NEW) ---
+          //  Game 3: 5x5 Tic Tac Toe  
 
     case 3:
         cout << "Starting Game: 5x5 Tic Tac Toe..." << endl;
@@ -106,7 +105,7 @@ void run_game_selection(int choice) {
         delete players[1];
         delete gameManager;
         break;
-
+        //  Game 4:  Word Tic-tac-toe
     case 4:
     {
         cout << "Starting Game: Word Tic-tac-toe..." << endl;
@@ -132,7 +131,7 @@ void run_game_selection(int choice) {
         break;
     }
 
-          // --- Game 5: Misere ---
+          // Game 5: Misere 
     case 5: {
         board = new MisereBoard();
         players[0] = new Player<char>("P1", 'X', PlayerType::HUMAN);
@@ -149,7 +148,7 @@ void run_game_selection(int choice) {
         break;
     }
 
-          // --- Game 6: Diamond ---
+          //  Game 6: Diamond 
     case 6: {
         cout << "\n--- Diamond Tic-Tac-Toe ---\n";
         board = new DiamondBoard();
@@ -174,7 +173,8 @@ void run_game_selection(int choice) {
         gameManager->run();
         break;
     }
-         case 7: {
+          // Game 7: 4x4 Tic-Tac-Toe 
+    case 7: {
      cout << "Starting Game: 4x4 Tic-Tac-Toe..." << endl;
      Game7_Board* board = new Game7_Board();
      Game7_UI* ui = new Game7_UI();
@@ -208,7 +208,7 @@ void run_game_selection(int choice) {
     delete[] players;
     break;
 }
-              // --- Game 9: Numerical Tic-Tac-Toe ---
+              // --- Game 9: Numerical Tic-Tac-Toe 
         case 9: {
             cout << "\n--- Starting Numerical Tic-Tac-Toe ---\n";
             cout << "Player 1: Odd Numbers (1,3,5,7,9)\n";
@@ -224,6 +224,7 @@ void run_game_selection(int choice) {
             gameManager->run();
             break;
         }
+              // Game 10: Obstacles
     case 10:
     {
         cout << "Starting Game: ObstaclesBoard..." << endl;
@@ -248,7 +249,7 @@ void run_game_selection(int choice) {
     }
 
         
-          // --- Example Game ---
+          //  Game XO 
     case 14: {
         board = new X_O_Board();
         players[0] = new Player<char>("P1", 'X', PlayerType::HUMAN);
