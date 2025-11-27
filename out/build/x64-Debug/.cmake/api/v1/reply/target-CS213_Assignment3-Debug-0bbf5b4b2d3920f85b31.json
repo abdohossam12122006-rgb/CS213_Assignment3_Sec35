@@ -129,7 +129,8 @@
 				8,
 				9,
 				10,
-				11
+				11,
+				12
 			]
 		}
 	],
@@ -195,6 +196,11 @@
 		{
 			"backtrace" : 2,
 			"path" : "NumericalUI.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "UltimateTicTacToe.h",
 			"sourceGroupIndex" : 1
 		}
 	],

@@ -22,7 +22,7 @@
 #include "Pyramid.h"
 #include "NumericalBoard.h"
 #include "NumericalUI.h"
-
+#include "UltimateTicTacToe.h"
 using namespace std;
 
 void display_menu() {
@@ -247,7 +247,35 @@ void run_game_selection(int choice) {
         delete players[1];
         break;
     }
+    case 11: {
 
+    }
+
+
+           // Game 12 : Ultimate_TicTacToe
+
+    case 12: {
+        cout << "\n--- Starting Ultimate Tic-Tac-Toe ---\n";
+        cout << "Big Board is 9x9 (contains 9 mini-boards).\n";
+        cout << "Winning a mini-board marks the big cell.\n";
+        cout << "Get 3 big cells in a row to WIN!\n";
+
+        board = new UltimateBoard();
+        players[0] = new Player<char>("P1", 'X', PlayerType::HUMAN);
+        players[1] = new Player<char>("P2", 'O', PlayerType::HUMAN);
+
+        ui = new XO_UI();
+        gameManager = new GameManager<char>(board, players, ui);
+
+        gameManager->run();
+
+        delete gameManager;
+        delete board;
+        delete players[0];
+        delete players[1];
+        delete ui;
+        break;
+    }
         
           //  Game XO 
     case 14: {
