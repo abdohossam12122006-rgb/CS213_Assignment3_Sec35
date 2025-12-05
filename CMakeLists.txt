@@ -9,5 +9,5 @@ add_executable(CS213_Assignment3
     
     
     
- "MisereTicTacToe.h" "DiamondBoard.h" "MisereMinimaxPlayer.h" "MisereUI.h" "DiamondMinimaxPlayer.h" "DiamondUI.h" "SUS_Board.h" "Four_in_a_row_Random_Player" "Four_in_a_row_Random_Player.h"   "NumericalBoard.h" "NumericalUI.h"  "UltimateTicTacToe.h")
+ "MisereTicTacToe.h" "DiamondBoard.h" "MisereMinimaxPlayer.h" "MisereUI.h" "DiamondMinimaxPlayer.h" "DiamondUI.h" "SUS_Board.h" "Four_in_a_row_Random_Player" "Four_in_a_row_Random_Player.h"   "NumericalBoard.h" "NumericalUI.h"  "UltimateTicTacToe.h" )
 target_include_directories(CS213_Assignment3 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

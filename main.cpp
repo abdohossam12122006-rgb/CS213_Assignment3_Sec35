@@ -225,32 +225,28 @@ void run_game_selection(int choice) {
             break;
         }
               // Game 10: Obstacles
-    case 10:
-    {
-        cout << "Starting Game: ObstaclesBoard..." << endl;
-        board = new ObstaclesBoard();
-        ui = new ObstaclesUI();
+        case 10:
+        {
+            cout << "Starting Game: ObstaclesBoard..." << endl;
+            board = new ObstaclesBoard();
+            ui = new ObstaclesUI();
 
-        string name1 = "Player X";
-        string name2 = "Player O";
+            string name1 = "Player X";
+            string name2 = "Player O";
 
-        players[0] = ui->create_player(name1, 'X', PlayerType::HUMAN);
-        players[1] = ui->create_player(name2, 'O', PlayerType::HUMAN);
+            players[0] = ui->create_player(name1, 'X', PlayerType::HUMAN);
+            players[1] = ui->create_player(name2, 'O', PlayerType::HUMAN);
 
-        gameManager = new GameManager<char>(board, players, ui);
-        gameManager->run();
+            gameManager = new GameManager<char>(board, players, ui);
+            gameManager->run();
 
-        delete gameManager;
-        delete board;
-        delete ui;
-        delete players[0];
-        delete players[1];
-        break;
-    }
-    case 11: {
-
-    }
-
+            delete gameManager;
+            delete board;
+            delete ui;
+            delete players[0];
+            delete players[1];
+            break;
+        }
 
            // Game 12 : Ultimate_TicTacToe
 
