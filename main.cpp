@@ -18,8 +18,11 @@
 #include "DiamondBoard.h"
 #include "DiamondMinimaxPlayer.h"
 #include "DiamondUI.h"
+
 #include "Game_7_.h"
 #include "Pyramid.h"
+#include "Infinity.h"
+
 #include "NumericalBoard.h"
 #include "NumericalUI.h"
 #include "UltimateTicTacToe.h"
@@ -248,6 +251,26 @@ void run_game_selection(int choice) {
             break;
         }
 
+        case 11: { // Infinity Tic-Tac-Toe
+    cout << "\n--- Starting Infinity Tic-Tac-Toe ---\n";
+    cout << "Board: 3x3. Rule: Oldest move is removed after every 3 moves.\n";
+
+    
+    board = new Infinity_Board();
+    ui = new InfinityUI();
+    Player<char>** players_array = ui->setup_players();
+
+    gameManager = new GameManager<char>(board, players_array, ui);
+    gameManager->run();
+    delete board;
+    delete ui;
+    delete gameManager;
+    delete players_array[0];
+    delete players_array[1];
+    delete[] players_array;
+
+    break;
+}
            // Game 12 : Ultimate_TicTacToe
 
     case 12: {
