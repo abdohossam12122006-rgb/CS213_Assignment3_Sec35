@@ -89,25 +89,43 @@ void run_game_selection(int choice) {
         break;
     }
 
-          //  Game 3: 5x5 Tic Tac Toe  
+               //  Game 3: 5x5 Tic Tac Toe  
+ case 3: {
+     cout << "Starting Game: 5x5 Tic Tac Toe..." << endl;
 
-    case 3:
-        cout << "Starting Game: 5x5 Tic Tac Toe..." << endl;
+     int mode;
+     cout << "\nChoose mode:\n";
+     cout << "1) Human vs Human\n";
+     cout << "2) Human vs AI\n";
+     cout << "Enter choice: ";
+     cin >> mode;
 
-        board = new FiveByFiveBoard();
-        players[0] = new Player<char>("Player 1", 'X', PlayerType::HUMAN);
-        players[1] = new Player<char>("Player 2", 'O', PlayerType::HUMAN);
-        ui = new XO_UI();
+     board = new FiveByFiveBoard();
 
-        gameManager = new GameManager<char>(board, players, ui);
-        gameManager->run();
+     if (mode == 1) {
+         // Human vs Human
+         players[0] = new Player<char>("Player 1", 'X', PlayerType::HUMAN);
+         players[1] = new Player<char>("Player 2", 'O', PlayerType::HUMAN);
+     }
+     else {
+         // Human vs AI
+         players[0] = new Player<char>("Player 1", 'X', PlayerType::HUMAN);
+         players[1] = new AIPlayer("Computer", 'O');  // AI class from your .h file
+     }
 
-        delete board;
-        delete ui;
-        delete players[0];
-        delete players[1];
-        delete gameManager;
-        break;
+     ui = new XO_UI();
+
+     gameManager = new GameManager<char>(board, players, ui);
+     gameManager->run();
+
+     delete board;
+     delete ui;
+     delete players[0];
+     delete players[1];
+     delete gameManager;
+     break;
+ }
+
         //  Game 4:  Word Tic-tac-toe
     case 4:
     {
