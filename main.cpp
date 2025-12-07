@@ -251,18 +251,32 @@ case 4:
             gameManager->run();
             break;
         }
+            
               // Game 10: Obstacles
         case 10:
         {
             cout << "Starting Game: ObstaclesBoard..." << endl;
+
             board = new ObstaclesBoard();
             ui = new ObstaclesUI();
+
+            int mode;
+            cout << "Choose mode:\n1) Human vs Human\n2) Human vs AI\nEnter choice: ";
+            cin >> mode;
 
             string name1 = "Player X";
             string name2 = "Player O";
 
+            // Player 1 (Human)
             players[0] = ui->create_player(name1, 'X', PlayerType::HUMAN);
-            players[1] = ui->create_player(name2, 'O', PlayerType::HUMAN);
+
+            // Player 2 (Human or AI)
+            if (mode == 2) {
+                players[1] = new AIPlayer_Obstacles('O');  // AI player
+            }
+            else {
+                players[1] = ui->create_player(name2, 'O', PlayerType::HUMAN);
+            }
 
             gameManager = new GameManager<char>(board, players, ui);
             gameManager->run();
@@ -274,7 +288,6 @@ case 4:
             delete players[1];
             break;
         }
-
         case 11: { // Infinity Tic-Tac-Toe
     cout << "\n--- Starting Infinity Tic-Tac-Toe ---\n";
     cout << "Board: 3x3. Rule: Oldest move is removed after every 3 moves.\n";
