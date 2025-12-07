@@ -97,7 +97,32 @@ public:
         return n_moves == 24;
     }
 };
+// ==========================================
+// ============  AI PLAYER  =================
+// ==========================================
+
+class AIPlayer : public Player<char> {
+public:
+    AIPlayer(string name, char symbol)
+        : Player<char>(name, symbol, PlayerType::COMPUTER)
+    {
+    }
+
+    Move<char>* get_move(Board<char>* board) /*override*/ {
+        int r, c;
+
+        while (true) {
+            r = rand() % board->get_rows();
+            c = rand() % board->get_columns();
+
+            if (board->get_cell(r, c) == 0)
+                break;
+        }
+
+        return new Move<char>(r, c, this->symbol);
+    }
+};
+
 
 #endif
-
 
