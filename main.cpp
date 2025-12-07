@@ -126,31 +126,37 @@ void run_game_selection(int choice) {
      break;
  }
 
-        //  Game 4:  Word Tic-tac-toe
-    case 4:
-    {
-        cout << "Starting Game: Word Tic-tac-toe..." << endl;
+             //  Game 4:  Word Tic-tac-toe
+case 4:
+{
+    cout << "Starting Game: Word Tic-tac-toe...\n";
 
-        board = new WordTicTacToe();
-        ui = new WordUI();
+    board = new WordTicTacToe();
+    ui = new WordUI();
 
-        string name1 = "Player 1";
-        string name2 = "Player 2";
+    int mode;
+    cout << "Choose Mode:\n1) Human vs Human\n2) Human vs AI\nEnter choice: ";
+    cin >> mode;
 
-        players[0] = ui->create_player(name1, '\0', PlayerType::HUMAN);
-        players[1] = ui->create_player(name2, '\0', PlayerType::HUMAN);
+    string name1 = "Player 1";
+    string name2 = (mode == 2 ? "AI" : "Player 2");
 
-        gameManager = new GameManager<char>(board, players, ui);
-        gameManager->run();
+    players[0] = ui->create_player(name1, '\0', PlayerType::HUMAN);
+    players[1] = ui->create_player(name2, '\0',
+        mode == 2 ? PlayerType::AI : PlayerType::HUMAN);
 
-        delete gameManager;
-        delete board;
-        delete ui;
-        delete players[0];
-        delete players[1];
+    gameManager = new GameManager<char>(board, players, ui);
+    gameManager->run();
 
-        break;
-    }
+    delete gameManager;
+    delete board;
+    delete ui;
+    delete players[0];
+    delete players[1];
+
+    break;
+}
+
 
           // Game 5: Misere 
     case 5: {
