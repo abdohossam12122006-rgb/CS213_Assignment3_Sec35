@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <cctype>
 #include <iostream>
+#include <BoardGame_Classes.h>
 
 using namespace std;
 
@@ -15,7 +16,7 @@ class WordTicTacToe : public Board<char> {
 private:
     vector<string> dictionary;
     string winningWord = "";
-    bool useDictionary = true;  
+    bool useDictionary = true;
 
     static string to_lower(const string& s) {
         string out = s;
@@ -48,13 +49,13 @@ public:
         }
         else {
             cerr << "Warning: dictionary file \"" << dict_filename << "\" not found.\n";
-            useDictionary = false; 
+            useDictionary = false;
         }
     }
 
     bool is_valid_word(const string& w) const {
         if (w.size() != 3) return false;
-        if (!useDictionary) return true; 
+        if (!useDictionary) return true;
         string lw = to_lower(w);
         return binary_search(dictionary.begin(), dictionary.end(), lw);
     }
@@ -151,6 +152,22 @@ public:
     }
 
     Move<char>* get_move(Player<char>* player) override {
+
+        // ============= AI MODE =============
+        if (player->get_type() == PlayerType::AI) {
+            char ch = 'A' + (rand() % 26);
+
+            int r, c;
+            do {
+                r = rand() % 3;
+                c = rand() % 3;
+            } while (player->get_board_ptr()->get_cell(r, c) != 0);
+
+            cout << "AI played: " << ch << " at (" << r << "," << c << ")\n";
+            return new Move<char>(r, c, ch);
+        }
+
+        // ============= HUMAN MODE =============
         char ch;
         int r, c;
 
@@ -170,5 +187,5 @@ public:
     }
 };
 
-#endif // WORDTICTACTOE_H
 
+#endif // WORDTICTACTOE_H
