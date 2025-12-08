@@ -27,6 +27,9 @@
 #include "Fancy_UI.h"
 #include "Ultimate_UI.h"
 #include "UltimateSmartPlayer.h"
+#include "MemoryBoard.h"
+#include "Memory_UI.h"
+#include "MemoryMinimaxPlayer.h" 
 using namespace std;
 
 void display_menu() {
@@ -336,12 +339,37 @@ case 4:
 
             gameManager = new GameManager<char>(board, players, ui);
             gameManager->run();
-
             delete gameManager;
             delete board;
             delete players[0];
             delete players[1];
             delete ui;
+            break;
+        }
+               // --- Game 13: Memory Tic-Tac-Toe ---
+        case 13: {
+            cout << "\n--- Starting Memory Tic-Tac-Toe ---\n";
+
+            board = new MemoryBoard();
+            players[0] = new Player<char>("P1", 'X', PlayerType::HUMAN);
+
+            cout << "1. Human vs Human\n2. Human vs AI\nChoice: ";
+            int c13; cin >> c13;
+
+            if (c13 == 2) {
+                players[1] = new MemoryMinimaxPlayer<char>("Memory_Bot", 'O');
+                players[1]->set_board_ptr(board);
+            }
+            else {
+                players[1] = new Player<char>("P2", 'O', PlayerType::HUMAN);
+            }
+
+            ui = new Memory_UI();
+
+            gameManager = new GameManager<char>(board, players, ui);
+            gameManager->run();
+
+            delete gameManager; delete board; delete players[0]; delete players[1]; delete ui;
             break;
         }
   

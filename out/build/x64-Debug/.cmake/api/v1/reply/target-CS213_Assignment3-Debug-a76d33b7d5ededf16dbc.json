@@ -133,7 +133,10 @@
 				12,
 				13,
 				14,
-				15
+				15,
+				16,
+				17,
+				18
 			]
 		}
 	],
@@ -219,6 +222,21 @@
 		{
 			"backtrace" : 2,
 			"path" : "UltimateSmartPlayer.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "MemoryBoard.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "Memory_UI.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "MemoryMinimaxPlayer.h",
 			"sourceGroupIndex" : 1
 		}
 	],
