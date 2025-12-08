@@ -130,7 +130,10 @@
 				9,
 				10,
 				11,
-				12
+				12,
+				13,
+				14,
+				15
 			]
 		}
 	],
@@ -201,6 +204,21 @@
 		{
 			"backtrace" : 2,
 			"path" : "UltimateTicTacToe.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "Ultimate_UI.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "Fancy_UI.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "UltimateSmartPlayer.h",
 			"sourceGroupIndex" : 1
 		}
 	],
