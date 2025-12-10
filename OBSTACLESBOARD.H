@@ -6,6 +6,10 @@
 #include <algorithm>
 #include <random>
 #include <chrono>
+/**
+ * @class ObstaclesBoard
+ * @brief A 6x6 board that adds random obstacles every two moves.
+ */
 
 class ObstaclesBoard : public Board<char> {
     static const int SIZE = 6;
