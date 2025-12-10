@@ -68,19 +68,7 @@ void run_game_selection(int choice) {
     switch (choice) {
         // Game 1: SUS 
     case 1: {
-        /*
-        board = new SUS_Board();
-        players[0] = new Player<char>("P1", 'S', PlayerType::HUMAN);
-        players[1] = new Player<char>("P2", 'U', PlayerType::HUMAN);
-        ui = new SUS_UI();
-        gameManager = new GameManager<char>(board, players, ui);
-        gameManager->run();
-
-        if (auto susBoard = dynamic_cast<SUS_Board*>(board)) {
-            cout << "Score -> P1: " << susBoard->get_score(0)
-                << " | P2: " << susBoard->get_score(1) << endl;
-        }
-        */
+      
         SUS_UI* ui = new SUS_UI();
 Player<char>** players = ui->setup_players();
 SUS_Board* board = new SUS_Board();
