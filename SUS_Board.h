@@ -2,12 +2,26 @@
 #include "SUS_UI.h"
 #include <cctype>
 
+/**
+ * @class SUS_Board
+ * @brief Represents the 3×3 board for the SUS game.
+ */
+
 SUS_Board::SUS_Board() : Board(3, 3) {
+    /**
+     * @brief Initialize all board cells with the blank symbol.
+     */
     for (auto& row : board)
         for (auto& c : row)
             c = blank_symbol;
 }
 
+/**
+ * @brief Updates the board with a player's move.
+ *
+ * @param move Pointer to the player's Move object.
+ * @return true if the move is valid and applied, false otherwise.
+ */
 bool SUS_Board::update_board(Move<char>* move) {
     int x = move->get_x();
     int y = move->get_y();
@@ -24,8 +38,16 @@ bool SUS_Board::update_board(Move<char>* move) {
     return true;
 }
 
+/**
+ * @brief Counts all complete "S-U-S" sequences on the board.
+ *
+ * @param symbol Symbol of the player (unused but kept for compatibility).
+ * @return Number of detected sequences.
+ */
 int SUS_Board::count_sequences(char symbol) {
     int count = 0;
+
+    /// @brief Allowed movement directions: vertical, horizontal, diagonal, anti-diagonal.
     int dir[4][2] = { {1,0}, {0,1}, {1,1}, {1,-1} };
 
     for (int i = 0; i < rows; i++) {
@@ -45,17 +67,37 @@ int SUS_Board::count_sequences(char symbol) {
     return count;
 }
 
+/**
+ * @brief Checks if the game is a draw.
+ *
+ * @param player Pointer to the player (unused).
+ * @return true if all 9 moves have been played.
+ */
 bool SUS_Board::is_draw(Player<char>* player) {
     return (n_moves == 9);
 }
 
+/**
+ * @brief Checks if the game is over.
+ *
+ * @param player Pointer to the player (unused).
+ * @return true if board is full.
+ */
 bool SUS_Board::game_is_over(Player<char>* player) {
     return n_moves == 9;
 }
 
+/**
+ * @brief Static helper function: counts "S-U-S" sequences in any matrix.
+ *
+ * @param mat 2D character matrix.
+ * @param symbol Player symbol (unused).
+ * @return Total number of sequences found.
+ */
 int SUS_Board::count_sequences_in_matrix(const std::vector<std::vector<char>>& mat, char symbol) {
     int rows = (int)mat.size();
     if (rows == 0) return 0;
+
     int cols = (int)mat[0].size();
     int count = 0;
     int dir[4][2] = { {1,0}, {0,1}, {1,1}, {1,-1} };
@@ -77,14 +119,36 @@ int SUS_Board::count_sequences_in_matrix(const std::vector<std::vector<char>>& m
     return count;
 }
 
+/**
+ * @class SUS_AI
+ * @brief AI logic for evaluating game board states.
+ */
+
+/**
+ * @brief Evaluates the board and returns a score for the AI.
+ *
+ * @param mat Board matrix.
+ * @param me Symbol used by the AI player.
+ * @return Evaluation score where higher is better for the AI.
+ */
 int SUS_AI::evaluate(const std::vector<std::vector<char>>& mat, char me) {
     int myScore = SUS_Board::count_sequences_in_matrix(mat, me);
     char opponent = (me == 'S') ? 'U' : 'S';
     int oppScore = SUS_Board::count_sequences_in_matrix(mat, opponent);
+
     return myScore * 2 - oppScore;
 }
 
-// setup_players implementation
+/**
+ * @class SUS_UI
+ * @brief Handling user interface for player creation and setup.
+ */
+
+/**
+ * @brief Sets up the two players (names and type: Human/AI).
+ *
+ * @return Array of two Player pointers.
+ */
 Player<char>** SUS_UI::setup_players() {
     Player<char>** players = new Player<char>*[2];
     string name, type;
@@ -104,3 +168,4 @@ Player<char>** SUS_UI::setup_players() {
 
     return players;
 }
+
